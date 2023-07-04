@@ -1,0 +1,36 @@
+<div class="dashboard">
+  <div class="section">
+    <h2 class="text-center">Patients</h2>
+    <div style="display: block">
+      <canvas class="patient-chart" baseChart
+              [datasets]="patientChartData"
+              [labels]="patientChartLabels"
+              [options]="patientChartOptions"
+              [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+<hr>
+  <div class="section">
+    <h2 class="text-center">Appointments</h2>
+    <div style="display: block">
+      <canvas class="appointment-chart" baseChart
+              [datasets]="appointmentChartData"
+              [labels]="appointmentChartLabels"
+              [options]="appointmentChartOptions"
+              [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="text-center">Doctors</h2>
+    <div style="display: block">
+      <canvas class="doctor-chart" baseChart
+              [datasets]="doctorChartData"
+              [labels]="doctorChartLabels"
+              [options]="doctorChartOptions"
+              [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h2>View Appointments</h2>
+<mat-form-field appearance="fill">
+  <mat-label>Date</mat-label>
+  <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectedDate">
+  <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+  <mat-datepicker #datepicker></mat-datepicker>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="getAppointmentsByDate(selectedDate)">Check</button>
+<ul>
+  <li *ngFor="let appointment of appointments">
+    <span>Patient: {{ appointment.patient.name }}</span>
+    <span>Date: {{ appointment.date | date }}</span>
+  </li>
+</ul>
