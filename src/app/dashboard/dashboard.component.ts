@@ -16,6 +16,7 @@ export class DashboardComponent {
   appointments: any[] = [];
   doctors:any[]=[];
 
+
   selectedDate: string = '';
 
   public doctorChartLabels: string[] = ['Doctors'];
@@ -71,11 +72,7 @@ export class DashboardComponent {
     {
       data: [], // Initially empty until data is retrieved
       label: 'Appointments',
-      backgroundColor: [
-        'rgba(255, 99, 71, 0.6)',   // Color 1
 
-        // Add more colors here as needed
-      ] as Color[],
     },
   ];
   public appointmentChartType: ChartType = 'pie';

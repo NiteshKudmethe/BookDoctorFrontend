@@ -23,7 +23,15 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { MatDateSelectionModel, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ViewAppointmentsComponent } from './view-appointments/view-appointments.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { PaymentComponent } from './payment/payment.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { GetprescriptionComponent } from './getprescription/getprescription.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +40,18 @@ import { ViewAppointmentsComponent } from './view-appointments/view-appointments
     PatientsComponent,
     ScheduleAppointmentComponent,
     DoctorsComponent,
-    ViewAppointmentsComponent
+    ViewAppointmentsComponent,
+    PaymentComponent,
+    PrescriptionComponent,
+    GetprescriptionComponent,
+    RegisterComponent,
+    LoginComponent,
+    LandingPageComponent,
+
   ],
   imports: [
     NgChartsModule,
+    MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserModule,
@@ -54,9 +70,10 @@ import { ViewAppointmentsComponent } from './view-appointments/view-appointments
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
+    NgxMaterialTimepickerModule,
 
-
-
+    ReactiveFormsModule
 
   ],
   providers: [

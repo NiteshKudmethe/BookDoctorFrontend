@@ -1,4 +1,6 @@
-<h2>Schedule Appointment</h2>
+<div class="container">
+  <h2 >Schedule Appointment</h2>
+
 <mat-form-field appearance="fill">
   <mat-label>Patient</mat-label>
   <mat-select #patientSelect>
@@ -9,18 +11,37 @@
 <mat-form-field appearance="fill">
   <mat-label>Doctor</mat-label>
   <mat-select #doctorSelect>
-    <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">{{ doctor.name }}</mat-option>
+    <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">{{ doctor.specialization }} ({{ 'Dr.'+doctor.name }})</mat-option>
   </mat-select>
 </mat-form-field>
+
 <mat-form-field appearance="fill">
   <mat-label>Date</mat-label>
-  <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectedDate">
+  <input
+    matInput
+    [matDatepicker]="datepicker"
+    [(ngModel)]="selectedDate"
+    [matDatepickerFilter]="isUnavailableDate"
+  />
   <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
   <mat-datepicker #datepicker></mat-datepicker>
-  <mat-datepicker-content>
-    <mat-calendar [dateClass]="dateClass" [dateFilter]="dateFilter"></mat-calendar>
-  </mat-datepicker-content>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Time</mat-label>
+  <mat-select [(ngModel)]="selectedTime">
+    <mat-option *ngFor="let timeSlot of timeSlots" [value]="timeSlot">{{ timeSlot }}</mat-option>
+  </mat-select>
 </mat-form-field>
 
 
-<button mat-raised-button color="primary" (click)="scheduleAppointment(patientSelect.value, selectedDate.toISOString())">Schedule</button>
+
+<button
+  mat-raised-button
+  color="primary"
+  (click)="scheduleAppointment(patientSelect!.value,doctorSelect!.value, selectedDate,selectedTime)"
+>
+  Schedule
+</button>
+
+</div>

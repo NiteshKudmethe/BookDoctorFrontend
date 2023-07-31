@@ -7,4 +7,12 @@
   <mat-label>Doctor Specialization</mat-label>
   <input matInput #specializationInput type="text" placeholder="Specialization">
 </mat-form-field>
-<button mat-raised-button color="primary" (click)="addDoctor(nameInput.value, specializationInput.value)">Add</button>
+<mat-form-field appearance="fill">
+  <mat-label>Doctor Username</mat-label>
+  <input matInput #usernameInput type="text" placeholder="Username">
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Doctor Password</mat-label>
+  <input matInput #passwordInput type="password" placeholder="Password">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="addDoctor(nameInput.value, specializationInput.value, usernameInput.value, passwordInput.value)">Add</button>
